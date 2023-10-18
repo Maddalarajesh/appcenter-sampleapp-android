@@ -25,3 +25,8 @@ steps:
     jdkVersionOption: '1.8'
     gradleOptions: '-Xmx3072m'
     sonarQubeRunAnalysis: false
+
+- task: UseNode@1
+  displayName: 'Use Node 17'
+  inputs:
+    checkLatest: true
