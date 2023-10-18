@@ -30,3 +30,11 @@ steps:
   displayName: 'Use Node 17'
   inputs:
     checkLatest: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: '**/*.apk'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
